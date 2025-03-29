@@ -8,6 +8,7 @@ permalink: /
 ---
 
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script src="{{site.baseurl}}/assets/js/model.js"></script>
 <script src="{{site.baseurl}}/assets/js/graphing.js"></script>
 
 Text can be **bold**, _italic_, or ~~strikethrough~~.
