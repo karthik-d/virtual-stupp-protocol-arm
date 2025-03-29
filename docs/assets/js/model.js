@@ -1,8 +1,3 @@
-function weibull(x, lambda, k) {
-	// x: survival time; lambda: scale; k: shape.
-	return (k / lambda) * Math.pow(x / lambda, k - 1) * Math.exp(-Math.pow(x / lambda, k));
-}
-
 
 function predictMOS(scale, shape)	{
 	// predict the median survival using scale and shape parameter of the Weibull.
@@ -16,7 +11,6 @@ function predictMOS(scale, shape)	{
 function predictLogScale(kps90, mgmt, sex)	{
 	// `scale` is `lambda`.
 	log_scale = (0.004*kps90) + (0.007*mgmt) + (-0.02*sex) + 3.695
-	console.log("log(scale):", log_scale)
 	return log_scale
 }
 
@@ -26,7 +20,10 @@ function populateMedianOS(mOS)	{
 }
 
 
-function readData()	{
+function readData(event)	{
+
+	// don't submit the form!
+	event.preventDefault();
 
 	// add validation.
 
@@ -47,6 +44,6 @@ function readData()	{
 	const mOS = predictMOS(param_scale, param_shape)
 
 	// make the plot; fill in data.
-	populateSurvivalPlot(lambda=param_shape, k=param_scale, time_start=0, time_end=100);
+	populateSurvivalPlot(lambda=param_scale, k=param_shape);
 	populateMedianOS(mOS);
 }

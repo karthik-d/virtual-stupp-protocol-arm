@@ -43,7 +43,7 @@ There should be whitespace between paragraphs. We recommend including a README, 
 	  		<input type="text" class="form__input" id="total" />      
 		</div>
 		<div class="form-unit">    
-	  		<button class="action-button form__submit" id="sub-button" onclick="readData()">Generate Virtual Arm</button>      
+	  		<button class="action-button form__submit" id="sub-button" onclick="readData(event);">Generate Virtual Arm</button>      
 		</div>
     </form>
   </div>
