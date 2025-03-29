@@ -5,11 +5,20 @@
 	color: #222;
 }
 
+.form-container	{
+	width: 40%;
+	margin: auto;
+}
+
 .result-container {
-	margin: auto 5rem;
+	width: 60%;
+	margin: auto;
+}
+
+.result-box  {
 	border: 3px dashed rgb(123, 123, 123);
 	border-radius: 20px;
-	padding: 100px 40px;
+	padding: auto 40px;
 }
 
 .action-button {

@@ -7,7 +7,8 @@ title: "Virtual Stupp Protocol Arm"
 permalink: /
 ---
 
-<script src="{{ base.url | prepend: site.url }}/assets/js/graphing.js"></script>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script src="{{site.baseurl}}/assets/js/graphing.js"></script>
 
 Text can be **bold**, _italic_, or ~~strikethrough~~.
 
@@ -48,8 +49,9 @@ There should be whitespace between paragraphs. We recommend including a README, 
   </div>
 
   <div class="result-container">
-  <div class="results-box">
+  <div class="result-box">
   	<p class="result__status">Waiting for input</p>
+	<div class="result__plot" id="distributionPlot"></div>
 	<script>getPlot();</script>
   	<button class="result__download action-button" id="download">Download as CSV</button>   
   </div>

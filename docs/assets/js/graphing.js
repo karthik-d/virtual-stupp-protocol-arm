@@ -1,21 +1,17 @@
 function getPlot()	{
-	const data = [{
-        x: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-        type: 'histogram',
-        marker: {
-            color: 'skyblue'
-        }
-    }];
+	var x = [];
+	for (var i = 0; i < 500; i ++) {
+		x[i] = Math.random();
+	}
 
-    const layout = {
-        title: 'Histogram Example',
-        xaxis: {
-            title: 'Values'
-        },
-        yaxis: {
-            title: 'Frequency'
-        }
-    };
+	var trace = {
+		x: x,
+		type: 'histogram',
+	};
+	var data = [trace];
+	var layout = {
+		title: 'Survival Weibull Distribution'
+	};
 
     return Plotly.newPlot('distributionPlot', data, layout);
 }
