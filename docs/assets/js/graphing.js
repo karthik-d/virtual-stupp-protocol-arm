@@ -1,14 +1,13 @@
-function getPlot()	{
+function populateSurvivalPlot(lambda, k, time_start, time_end)	{
+
 	// Parameters for the Weibull distribution
-	const lambda = 2; // Scale parameter
-	const k = 1.5;    // Shape parameter
 	const xValues = [];
 	const yValues = [];
 
 	// Generate data points for the plot
-	for (let x = 0; x <= 10; x += 0.1) {
-	xValues.push(x);
-	yValues.push(weibull(x, lambda, k));
+	for (let x = time_start; x <= time_end; x += 0.1) {
+		xValues.push(x);
+		yValues.push(weibull(x, lambda, k));
 	}
 
 	// Create the Plotly plot
@@ -21,10 +20,10 @@ function getPlot()	{
 	}];
 
 	const layout = {
-		title: 'Weibull Distribution',
-		xaxis: { title: 'x' },
-		yaxis: { title: 'Probability Density' }
+		title: 'Survival Distribution',
+		xaxis: { title: 'months' },
+		yaxis: { title: 'number of survivors' }
 	};
 
-    return Plotly.newPlot('distributionPlot', data, layout);
+    return Plotly.newPlot('survivalPlot', data, layout);
 }

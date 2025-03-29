@@ -63,8 +63,6 @@
 
 <script src="/virtual-stupp-arm/docs/assets/js/graphing.js"></script>
 
-<p>Text can be <strong>bold</strong>, <em>italic</em>, or <del>strikethrough</del>.</p>
-
 <p><a href="./another-page.html">Link to another page</a>.</p>
 
 <p>There should be whitespace between paragraphs.</p>
@@ -96,7 +94,7 @@
 	  		<input type="text" class="form__input" id="total" />      
 		</div>
 		<div class="form-unit">    
-	  		<button class="action-button form__submit" id="submit">Generate Virtual Arm</button>      
+	  		<button class="action-button form__submit" id="sub-button" onclick="readData()">Generate Virtual Arm</button>      
 		</div>
     </form>
   </div>
@@ -104,8 +102,11 @@
   <div class="result-container">
   <div class="result-box">
   	<p class="result__status">Waiting for input</p>
-	<div class="result__plot" id="distributionPlot"></div>
-	<script>getPlot();</script>
+	<div class="result__plot" id="survivalPlot"></div>
+	<div class="result__mos">
+		<span>Median Overall Survival (mOS): </span>
+		<span id="mosPrediction"></span>
+	</div>
   	<button class="result__download action-button" id="download">Download as CSV</button>   
   </div>
   </div>

@@ -11,7 +11,6 @@ permalink: /
 <script src="{{site.baseurl}}/assets/js/model.js"></script>
 <script src="{{site.baseurl}}/assets/js/graphing.js"></script>
 
-Text can be **bold**, _italic_, or ~~strikethrough~~.
 
 [Link to another page](./another-page.html).
 
@@ -44,7 +43,7 @@ There should be whitespace between paragraphs. We recommend including a README, 
 	  		<input type="text" class="form__input" id="total" />      
 		</div>
 		<div class="form-unit">    
-	  		<button class="action-button form__submit" id="submit">Generate Virtual Arm</button>      
+	  		<button class="action-button form__submit" id="sub-button" onclick="readData()">Generate Virtual Arm</button>      
 		</div>
     </form>
   </div>
@@ -52,8 +51,11 @@ There should be whitespace between paragraphs. We recommend including a README, 
   <div class="result-container">
   <div class="result-box">
   	<p class="result__status">Waiting for input</p>
-	<div class="result__plot" id="distributionPlot"></div>
-	<script>getPlot();</script>
+	<div class="result__plot" id="survivalPlot"></div>
+	<div class="result__mos">
+		<span>Median Overall Survival (mOS): </span>
+		<span id="mosPrediction"></span>
+	</div>
   	<button class="result__download action-button" id="download">Download as CSV</button>   
   </div>
   </div>
