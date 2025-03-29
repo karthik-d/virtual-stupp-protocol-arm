@@ -63,87 +63,64 @@
 
 <script src="/virtual-stupp-arm/docs/assets/js/graphing.js"></script>
 
-<p><a href="./another-page.html">Link to another page</a>.</p>
+<p>description text…</p>
 
-<p>There should be whitespace between paragraphs.</p>
-
-<p>There should be whitespace between paragraphs. We recommend including a README, or a file with information about your project.</p>
-
-<h1 id="header-1">Header 1</h1>
+<h3 id="generate-a-virtual-cohort">Generate a virtual cohort</h3>
 
 <section class="main-area">
-  <div class="form-container">
-    <div class="form-text-above">
-    	<p class="description-text"><i>Please enter the following parameters: </i></p>
-    </div>
-    <form action="" class="form"> 
-		<div class="form-unit">    
-			<label for="kps90" class="form__label">No. of KPS &gt;= 90</label>
-			<input type="text" class="form__input" id="kps90" />
+	<div class="form-container">
+		<div class="form-text-above">
+			<p class="description-text"><i>Please enter the following parameters: </i></p>
 		</div>
-		<div class="form-unit">    
-			<label for="mgmt" class="form__label">No. of Methylated MGMT</label>
-	  		<input type="text" class="form__input" id="mgmt" />
-		</div>
-		<div class="form-unit">    
-			<label for="sex" class="form__label">No. of Male Participants</label>
-	  		<input type="text" class="form__input" id="sex" />      
-		</div>
-		<div class="form-unit">    
-			<label for="total" class="form__label">Total No. of Participants</label>
-	  		<input type="text" class="form__input" id="total" />      
-		</div>
-		<div class="form-unit">    
-	  		<button class="action-button form__submit" id="sub-button" onclick="readData(event);">Generate Virtual Arm</button>      
-		</div>
-    </form>
-  </div>
-
-  <div class="result-container">
-  <div class="result-box">
-  	<p class="result__status">Waiting for input</p>
-	<div class="result__plot" id="survivalPlot"></div>
-	<div class="result__mos">
-		<span>Median Overall Survival (mOS): </span>
-		<span id="mosPrediction"></span>
+		<form action="" class="form"> 
+			<div class="form-unit">    
+				<label for="kps90" class="form__label">No. of KPS &gt;= 90</label>
+				<input type="text" class="form__input" id="kps90" />
+			</div>
+			<div class="form-unit">    
+				<label for="mgmt" class="form__label">No. of Methylated MGMT</label>
+				<input type="text" class="form__input" id="mgmt" />
+			</div>
+			<div class="form-unit">    
+				<label for="sex" class="form__label">No. of Male Participants</label>
+				<input type="text" class="form__input" id="sex" />      
+			</div>
+			<div class="form-unit">    
+				<label for="total" class="form__label">Total No. of Participants</label>
+				<input type="text" class="form__input" id="total" />      
+			</div>
+			<div class="form-unit">    
+				<button class="action-button form__submit" id="sub-button" onclick="readData(event);">Generate Virtual Arm</button>      
+			</div>
+		</form>
 	</div>
-  	<button class="result__download action-button" id="download">Download as CSV</button>   
-  </div>
-  </div>
+	<div class="result-container">
+		<div class="result-box">
+			<div class="result__status">
+				<span>Status: </span>
+				<span id="resultStatus">Waiting for input</span>
+			</div>
+			<div class="result__mos"><strong>
+				<span>Median Overall Survival (mOS): </span>
+				<span id="mosPrediction"></span>
+			</strong></div>
+			<button class="result__download action-button" id="download">Download as CSV</button>  
+			<div class="result__plot" id="survivalPlot"></div> 
+		</div>
+	</div>
 </section>
 
-<h3 id="header-3">Header 3</h3>
+<hr />
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Javascript code with syntax highlighting.</span>
-<span class="kd">var</span> <span class="nx">fun</span> <span class="o">=</span> <span class="kd">function</span> <span class="nx">lang</span><span class="p">(</span><span class="nx">l</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">dateformat</span><span class="p">.</span><span class="nx">i18n</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">./lang/</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">l</span><span class="p">)</span>
-  <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
+<h3 id="help-us-validate">Help us validate!</h3>
 
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Ruby code with syntax highlighting</span>
-<span class="no">GitHubPages</span><span class="o">::</span><span class="no">Dependencies</span><span class="p">.</span><span class="nf">gems</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">gem</span><span class="p">,</span> <span class="n">version</span><span class="o">|</span>
-  <span class="n">s</span><span class="p">.</span><span class="nf">add_dependency</span><span class="p">(</span><span class="n">gem</span><span class="p">,</span> <span class="s2">"= </span><span class="si">#{</span><span class="n">version</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
-<span class="k">end</span>
-</code></pre></div></div>
+<p>Submit summary statistics from your study to help us validate using this google form.</p>
 
-<h4 id="header-4">Header 4</h4>
+<p><img src="https://github.githubassets.com/images/icons/emoji/octocat.png" alt="Octocat" /></p>
 
-<ul>
-  <li>This is an unordered list following a header.</li>
-  <li>This is an unordered list following a header.</li>
-  <li>This is an unordered list following a header.</li>
-</ul>
+<hr />
 
-<h5 id="header-5">Header 5</h5>
-
-<ol>
-  <li>This is an ordered list following a header.</li>
-  <li>This is an ordered list following a header.</li>
-  <li>This is an ordered list following a header.</li>
-</ol>
-
-<h6 id="header-6">Header 6</h6>
+<h6 id="validation-studies">Validation studies</h6>
 
 <table>
   <thead>
@@ -177,81 +154,7 @@
   </tbody>
 </table>
 
-<h3 id="theres-a-horizontal-rule-below-this">There’s a horizontal rule below this.</h3>
-
 <hr />
-
-<h3 id="here-is-an-unordered-list">Here is an unordered list:</h3>
-
-<ul>
-  <li>Item foo</li>
-  <li>Item bar</li>
-  <li>Item baz</li>
-  <li>Item zip</li>
-</ul>
-
-<h3 id="and-an-ordered-list">And an ordered list:</h3>
-
-<ol>
-  <li>Item one</li>
-  <li>Item two</li>
-  <li>Item three</li>
-  <li>Item four</li>
-</ol>
-
-<h3 id="and-a-nested-list">And a nested list:</h3>
-
-<ul>
-  <li>level 1 item
-    <ul>
-      <li>level 2 item</li>
-      <li>level 2 item
-        <ul>
-          <li>level 3 item</li>
-          <li>level 3 item</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li>level 1 item
-    <ul>
-      <li>level 2 item</li>
-      <li>level 2 item</li>
-      <li>level 2 item</li>
-    </ul>
-  </li>
-  <li>level 1 item
-    <ul>
-      <li>level 2 item</li>
-      <li>level 2 item</li>
-    </ul>
-  </li>
-  <li>level 1 item</li>
-</ul>
-
-<h3 id="small-image">Small image</h3>
-
-<p><img src="https://github.githubassets.com/images/icons/emoji/octocat.png" alt="Octocat" /></p>
-
-<h3 id="large-image">Large image</h3>
-
-<p><img src="https://guides.github.com/activities/hello-world/branching.png" alt="Branching" /></p>
-
-<h3 id="definition-lists-can-be-used-with-html-syntax">Definition lists can be used with HTML syntax.</h3>
-
-<dl>
-<dt>Name</dt>
-<dd>Godzilla</dd>
-<dt>Born</dt>
-<dd>1952</dd>
-<dt>Birthplace</dt>
-<dd>Japan</dd>
-<dt>Color</dt>
-<dd>Green</dd>
-</dl>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
-</code></pre></div></div>
 
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>The final element.
 </code></pre></div></div>

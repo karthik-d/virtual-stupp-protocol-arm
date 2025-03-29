@@ -20,7 +20,6 @@ function populateSurvivalPlot(lambda, k)	{
 		prob = weibull(x, lambda, k);
 		xValues.push(x);
 		yValues.push(prob);
-		console.log(prob_prev, prob, prob_prev-prob);
 	} while(!((prob_prev-prob)>0 && prob<1e-6));
 
 	// Create the Plotly plot
@@ -35,8 +34,11 @@ function populateSurvivalPlot(lambda, k)	{
 	const layout = {
 		title: 'Survival Distribution',
 		xaxis: { title: 'months' },
-		yaxis: { title: 'number of survivors' }
+		yaxis: { title: 'number of survivors' },
+		autosize: true,
+		paper_bgcolor: 'rgba(0, 0, 0, 0)',
+		plot_bgcolor: 'rgba(0, 0, 0, 0.0)'
 	};
 
-    return Plotly.newPlot('survivalPlot', data, layout);
+    return Plotly.newPlot('survivalPlot', data, layout, {responsive: true});
 }

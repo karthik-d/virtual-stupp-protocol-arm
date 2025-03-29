@@ -1,13 +1,28 @@
+div.wrapper	{
+	width: 50%;
+	color: black;
+	font-size: 1rem;
+	font-weight: 200;
+}
+
 .main-area {
 	display: flex;
 	justify-content: space-between;
 	background: rgba(0, 0, 0, 0.06);
 	color: #222;
+	margin: auto -20px;
 }
 
 .form-container	{
 	width: 40%;
 	margin: auto;
+	margin-left: 10px;
+	/* text-align: center; */
+
+}
+
+.form-unit	{
+	width: 100%;
 }
 
 .result-container {
@@ -16,22 +31,35 @@
 }
 
 .result-box  {
-	border: 3px dashed rgb(123, 123, 123);
+	/* border: 2px dashed rgb(123, 123, 123); */
 	border-radius: 20px;
-	padding: auto 40px;
+	padding: 10px auto;
+	text-align: center;
+}
+
+div.result__plot	{
+	padding: auto;
 }
 
 .action-button {
-	background: linear-gradient(#77b9fb, #3782cd);
-	line-height: 1;
+	background: #3782cd;
 	font-size: 1rem;
-	color: #fff;
-	color: rgba(255, 255, 255, 0.8);
-	display: block;
-	text-align: center;
 	font-weight: 400;
-	padding-top: 6px;
-	height: 40px;
-	text-shadow: rgba(0, 0, 0, 0.4) 0 -1px 0;
-	border-right: 1px solid #3A7CBE;
+	height: 0.8rm;
+	width: 2rm;
+	margin: auto;
+	color: white;
+	border: 2px solid rgb(192, 192, 192);
+	border-radius:4px;
+	padding: 8px;
+}
+
+.action-button:hover {
+	background: #56a1eb;
+}
+
+.action-button:active {
+	background: #256db5;
+	border: 1px solid rgb(192, 192, 192);
+	padding: 10px;
 }

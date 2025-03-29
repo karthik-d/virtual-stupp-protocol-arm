@@ -20,10 +20,16 @@ function populateMedianOS(mOS)	{
 }
 
 
+function setStatusMessage(msg)	{
+	document.getElementById('resultStatus').innerHTML = msg;
+}
+
+
 function readData(event)	{
 
 	// don't submit the form!
 	event.preventDefault();
+	setStatusMessage("Approximating Weibull distribution...");
 
 	// add validation.
 
@@ -44,6 +50,15 @@ function readData(event)	{
 	const mOS = predictMOS(param_scale, param_shape)
 
 	// make the plot; fill in data.
-	populateSurvivalPlot(lambda=param_scale, k=param_shape);
 	populateMedianOS(mOS);
+	populateSurvivalPlot(lambda=param_scale, k=param_shape);
+
+	// generate samples.
+	setStatusMessage("Sampling the distribution and generating CSV...");
+
+
+	// ...
+
+
+	setStatusMessage("CSV ready to download!");
 }
