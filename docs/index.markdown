@@ -7,6 +7,8 @@ title: "Virtual Stupp Protocol Arm"
 permalink: /
 ---
 
+<script src="{{ base.url | prepend: site.url }}/assets/js/graphing.js"></script>
+
 Text can be **bold**, _italic_, or ~~strikethrough~~.
 
 [Link to another page](./another-page.html).
@@ -17,13 +19,14 @@ There should be whitespace between paragraphs. We recommend including a README, 
 
 # Header 1 
 
+<section class="main-area">
   <div class="form-container">
     <div class="form-text-above">
-    	<p class="description-text">Please enter the following parameters: </p>
+    	<p class="description-text"><i>Please enter the following parameters: </i></p>
     </div>
     <form action="" class="form"> 
 		<div class="form-unit">    
-			<label for="name" class="form__label">No. of KPS >= 90</label>
+			<label for="kps90" class="form__label">No. of KPS >= 90</label>
 			<input type="text" class="form__input" id="kps90" />
 		</div>
 		<div class="form-unit">    
@@ -31,24 +34,28 @@ There should be whitespace between paragraphs. We recommend including a README, 
 	  		<input type="text" class="form__input" id="mgmt" />
 		</div>
 		<div class="form-unit">    
-			<label for="subject" class="form__label">No. of Male Participants</label>
+			<label for="sex" class="form__label">No. of Male Participants</label>
 	  		<input type="text" class="form__input" id="sex" />      
 		</div>
 		<div class="form-unit">    
-	  		<button class="form__submit form__input" id="submit">Generate Virtual Arm"</button>      
+			<label for="total" class="form__label">Total No. of Participants</label>
+	  		<input type="text" class="form__input" id="total" />      
+		</div>
+		<div class="form-unit">    
+	  		<button class="action-button form__submit" id="submit">Generate Virtual Arm</button>      
 		</div>
     </form>
   </div>
 
-# Header 1
+  <div class="result-container">
+  <div class="results-box">
+  	<p class="result__status">Waiting for input</p>
+	<script>getPlot();</script>
+  	<button class="result__download action-button" id="download">Download as CSV</button>   
+  </div>
+  </div>
+</section>
 
-This is a normal paragraph following a header. GitHub is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere.
-
-## Header 2
-
-> This is a blockquote following a header.
->
-> When something is important enough, you do it even if the odds are not in your favor.
 
 ### Header 3
 

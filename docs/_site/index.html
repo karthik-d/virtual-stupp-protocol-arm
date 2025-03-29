@@ -57,7 +57,9 @@
       </header>
       <section>
 
-      <p>Text can be <strong>bold</strong>, <em>italic</em>, or <del>strikethrough</del>.</p>
+      <script src="http://localhost:4000/assets/js/graphing.js"></script>
+
+<p>Text can be <strong>bold</strong>, <em>italic</em>, or <del>strikethrough</del>.</p>
 
 <p><a href="./another-page.html">Link to another page</a>.</p>
 
@@ -67,13 +69,14 @@
 
 <h1 id="header-1">Header 1</h1>
 
-<div class="form-container">
+<section class="main-area">
+  <div class="form-container">
     <div class="form-text-above">
-    	<p class="description-text">Please enter the following parameters: </p>
+    	<p class="description-text"><i>Please enter the following parameters: </i></p>
     </div>
     <form action="" class="form"> 
 		<div class="form-unit">    
-			<label for="name" class="form__label">No. of KPS &gt;= 90</label>
+			<label for="kps90" class="form__label">No. of KPS &gt;= 90</label>
 			<input type="text" class="form__input" id="kps90" />
 		</div>
 		<div class="form-unit">    
@@ -81,26 +84,27 @@
 	  		<input type="text" class="form__input" id="mgmt" />
 		</div>
 		<div class="form-unit">    
-			<label for="subject" class="form__label">No. of Male Participants</label>
+			<label for="sex" class="form__label">No. of Male Participants</label>
 	  		<input type="text" class="form__input" id="sex" />      
 		</div>
 		<div class="form-unit">    
-	  		<button class="form__submit form__input" id="submit">Generate Virtual Arm"</button>      
+			<label for="total" class="form__label">Total No. of Participants</label>
+	  		<input type="text" class="form__input" id="total" />      
+		</div>
+		<div class="form-unit">    
+	  		<button class="action-button form__submit" id="submit">Generate Virtual Arm</button>      
 		</div>
     </form>
   </div>
 
-<h1 id="header-1-1">Header 1</h1>
-
-<p>This is a normal paragraph following a header. GitHub is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere.</p>
-
-<h2 id="header-2">Header 2</h2>
-
-<blockquote>
-  <p>This is a blockquote following a header.</p>
-
-  <p>When something is important enough, you do it even if the odds are not in your favor.</p>
-</blockquote>
+  <div class="result-container">
+  <div class="results-box">
+  	<p class="result__status">Waiting for input</p>
+	<script>getPlot();</script>
+  	<button class="result__download action-button" id="download">Download as CSV</button>   
+  </div>
+  </div>
+</section>
 
 <h3 id="header-3">Header 3</h3>
 

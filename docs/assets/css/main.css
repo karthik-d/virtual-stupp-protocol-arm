@@ -1,0 +1,28 @@
+.main-area {
+	display: flex;
+	justify-content: space-between;
+	background: rgba(0, 0, 0, 0.06);
+	color: #222;
+}
+
+.result-container {
+	margin: auto 5rem;
+	border: 3px dashed rgb(123, 123, 123);
+	border-radius: 20px;
+	padding: 100px 40px;
+}
+
+.action-button {
+	background: linear-gradient(#77b9fb, #3782cd);
+	line-height: 1;
+	font-size: 1rem;
+	color: #fff;
+	color: rgba(255, 255, 255, 0.8);
+	display: block;
+	text-align: center;
+	font-weight: 400;
+	padding-top: 6px;
+	height: 40px;
+	text-shadow: rgba(0, 0, 0, 0.4) 0 -1px 0;
+	border-right: 1px solid #3A7CBE;
+}

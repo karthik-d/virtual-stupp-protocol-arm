@@ -15,23 +15,9 @@
 	font-size: 1rem;
 }
 
-.form__label {
-	font-size: 1rem;
-	color: grey;
-	display: block;
-}
 
-.form__submit {
-	background: linear-gradient(#77b9fb, #3782cd);
-	line-height: 1;
-	font-size: 1rem;
-	color: #fff;
-	color: rgba(255, 255, 255, 0.8);
+.form__label {
+	font-size: 0.95rem;
+	color: rgb(54, 53, 53);
 	display: block;
-	text-align: center;
-	font-weight: 400;
-	padding-top: 6px;
-	height: 40px;
-	text-shadow: rgba(0, 0, 0, 0.4) 0 -1px 0;
-	border-right: 1px solid #3A7CBE;
 }
