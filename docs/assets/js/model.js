@@ -48,11 +48,28 @@ function readData(event)	{
 
 	// add validation.
 
+	console.log("reading data")
 	// read from the form.
-	n_samples = 287
-	kps90 = 39.4
-	mgmt = 43.4
-	sex = 64.5
+	try{
+		n_samples = parseInt(document.getElementById('total').value);
+		kps90 = parseFloat(document.getElementById('kps90').value) / n_samples * 100;
+		mgmt = parseFloat(document.getElementById('mgmt').value) / n_samples * 100;
+		sex = parseFloat(document.getElementById('sex').value) / n_samples * 100;
+	}
+	catch (error){
+		n_samples = 287
+		kps90 = 39.4
+		mgmt = 43.4
+		sex = 64.5
+	}
+
+	if (isNaN(n_samples) || isNaN(kps90) || isNaN(mgmt) || isNaN(sex)){
+		n_samples = 287
+		kps90 = 39.4
+		mgmt = 43.4
+		sex = 64.5
+	}
+	console.log("data noted", n_samples, kps90, mgmt, sex);
 	
 	// preset params.
 	const param_shape = 1.47
