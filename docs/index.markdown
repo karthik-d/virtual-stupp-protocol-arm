@@ -21,17 +21,22 @@ There should be whitespace between paragraphs. We recommend including a README, 
     <div class="form-text-above">
     	<p class="description-text">Please enter the following parameters: </p>
     </div>
-    <form action="" class="form">
-      
-      <input type="text" placeholder="No. of KPS >= 90" class="form__input" id="kps90" />
-      <label for="name" class="form__label">No. of KPS >= 90</label>
-
-      <input type="text" placeholder="No. of Methylated MGMT" class="form__input" id="mgmt" />
-      <label for="mgmt" class="form__label">No. of Methylated MGMT</label>
-
-      <input type="text" placeholder="Subject" class="form__input" id="sex" />
-      <label for="subject" class="form__label">Subject</label>
-      
+    <form action="" class="form"> 
+		<div class="form-unit">    
+			<label for="name" class="form__label">No. of KPS >= 90</label>
+			<input type="text" class="form__input" id="kps90" />
+		</div>
+		<div class="form-unit">    
+			<label for="mgmt" class="form__label">No. of Methylated MGMT</label>
+	  		<input type="text" class="form__input" id="mgmt" />
+		</div>
+		<div class="form-unit">    
+			<label for="subject" class="form__label">No. of Male Participants</label>
+	  		<input type="text" class="form__input" id="sex" />      
+		</div>
+		<div class="form-unit">    
+	  		<button class="form__submit form__input" id="submit">Generate Virtual Arm"</button>      
+		</div>
     </form>
   </div>
 
