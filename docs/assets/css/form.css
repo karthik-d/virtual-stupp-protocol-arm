@@ -1,0 +1,62 @@
+.description-text	{
+	color: red;
+}
+
+.form {
+	align-self: center;
+  }
+
+
+.form__input {
+	width: clamp(120px, 50vw, 420px);
+	height: 2.5rem;
+	padding: 0 1.25rem;
+	border: 1px solid black;
+	border-radius: 2px;
+	margin: 0.625rem auto;
+	transition: all 250ms;
+	@media (min-width: 768px) {
+		width: clamp(120px, 35vw, 420px);
+	}
+
+	&:focus {
+		outline: none;
+		border-top-color: rgba(0,0,0,0.1);
+	}
+
+	&:focus + .form__label, &:not(:placeholder-shown) + .form__label {
+		transform: translateY(-4.50rem) scale(1);
+		color: black;
+	}
+
+	&::placeholder {
+		display: none;
+		color: transparent;
+		
+		-webkit-user-select: none; /* Safari */
+		-ms-user-select: none; /* IE 10 and IE 11 */
+		user-select: none; /* Standard syntax */
+	}
+
+	&:not(:placeholder-shown) {
+		border-top-color: rgba(0, 0, 0, 0.5);
+	}
+
+	.form__label {
+		font-size: 1rem;
+		color: grey;
+		display: block;
+
+		/* Moves the label on TOP of the placeholder */
+		/* You'll need to change this as needed */
+		transform: translate(1.25rem,-2.5rem);
+		transform-origin: 0 0; /* Used later for transitions */
+		transition: all 500ms;
+
+		-webkit-user-select: none; /* Safari */
+		-ms-user-select: none; /* IE 10 and IE 11 */
+		user-select: none; /* Standard syntax */
+
+		pointer-events: none; 
+	}
+}
