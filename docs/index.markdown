@@ -15,7 +15,7 @@ description text...
 
 ### Generate a virtual cohort
 
-<section class="main-area">
+<section class="main-area" onload="clearResultBox();">
 	<div class="form-container">
 		<div class="form-text-above">
 			<p class="description-text"><i>Please enter the following parameters: </i></p>
@@ -44,41 +44,54 @@ description text...
 	</div>
 	<div class="result-container">
 		<div class="result-box">
-			<div class="result__status">
-				<span>Status: </span>
+			<div class="result__unit result__status">
+				<span id="resultStatusTag"><b>Status: </b></span>
 				<span id="resultStatus">Waiting for input</span>
 			</div>
-			<div class="result__mos"><strong>
+			<div class="result__unit" id="resultMosBox"><strong>
 				<span>Median Overall Survival (mOS): </span>
 				<span id="mosPrediction"></span>
 			</strong></div>
-			<button class="result__download action-button" id="download">Download as CSV</button>  
-			<div class="result__plot" id="survivalPlot"></div> 
+			<div class="result__unit" id="resultCsvButton">
+				<button class="result__download action-button" id="download">Download as CSV</button>  
+			</div>
+			<div class="result__unit result__plot" id="resultSurvivalPlot"></div> 
 		</div>
 	</div>
 </section>
 
-* * *
 
 ### Help us validate!
 
-Submit summary statistics from your study to help us validate using this google form.
+Submit summary statistics from your study through this online form to help us validate.
 
 ![Octocat](https://github.githubassets.com/images/icons/emoji/octocat.png)
 
-* * *
+### Validation studies submitted
 
-###### Validation studies
-
-| head1        | head two          | three |
-|:-------------|:------------------|:------|
-| ok           | good swedish fish | nice  |
-| out of stock | good and plenty   | nice  |
-| ok           | good `oreos`      | hmm   |
-| ok           | good `zoute` drop | yumm  |
+<section class="main-area">
+<table>
+<tr>
+	<th>Date of Submission</th>
+	<th>DOI</th>
+	<th>Cohort Size</th>
+	<th>mOS (months)</th>
+</tr>
+<tr>
+	<td>March 29, 2025</td>
+	<td>10.110.111</td>
+	<td>100</td>
+	<td>50.32</td>
+</tr>
+</table>
+</section>
 
 * * *
 
 ```
 The final element.
 ```
+
+<script>
+	clearResultBox();
+</script>

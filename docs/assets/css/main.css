@@ -1,3 +1,4 @@
+
 div.wrapper	{
 	width: 50%;
 	color: black;
@@ -10,7 +11,7 @@ div.wrapper	{
 	justify-content: space-between;
 	background: rgba(0, 0, 0, 0.06);
 	color: #222;
-	margin: auto -20px;
+	margin: 30px -20px;
 }
 
 .form-container	{
@@ -62,4 +63,17 @@ div.result__plot	{
 	background: #256db5;
 	border: 1px solid rgb(192, 192, 192);
 	padding: 10px;
+}
+
+
+/*  results */
+
+.result__unit	{
+	text-align: center;
+	margin: 10px auto;
+	font-weight: 300;
+}
+
+#resultStatusTag	{
+	color: #256db5;
 }

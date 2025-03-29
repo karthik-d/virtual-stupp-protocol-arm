@@ -1,11 +1,12 @@
 
 function weibull(x, lambda, k) {
 	// x: survival time; lambda: scale; k: shape.
+	// use 	`multiplier` if you want frequency rather than probabililty.
 	return (k / lambda) * Math.pow(x / lambda, k - 1) * Math.exp(-Math.pow(x / lambda, k));
 }
 
 
-function populateSurvivalPlot(lambda, k)	{
+function populateSurvivalPlot(lambda, k, n_samples)	{
 
 	// Parameters for the Weibull distribution
 	const xValues = [];
@@ -13,14 +14,14 @@ function populateSurvivalPlot(lambda, k)	{
 
 	// Generate data points for the plot
 	let x = -0.5;
-	let prob = 0;
+	let freq = 0;
 	do	{
-		prob_prev = prob;
+		freq_prev = freq;
 		x += 0.5;
-		prob = weibull(x, lambda, k);
+		freq = weibull(x, lambda, k)*n_samples;
 		xValues.push(x);
-		yValues.push(prob);
-	} while(!((prob_prev-prob)>0 && prob<1e-6));
+		yValues.push(freq);
+	} while(!((freq_prev-freq)>0 && freq<1e-6));
 
 	// Create the Plotly plot
 	const data = [{
@@ -37,8 +38,15 @@ function populateSurvivalPlot(lambda, k)	{
 		yaxis: { title: 'number of survivors' },
 		autosize: true,
 		paper_bgcolor: 'rgba(0, 0, 0, 0)',
-		plot_bgcolor: 'rgba(0, 0, 0, 0.0)'
+		plot_bgcolor: 'rgba(0, 0, 0, 0.0)',
+		margin: {
+			l: 80, // Left margin
+			r: 80, // Right margin
+			t: 50, // Top margin
+			b: 50  // Bottom margin
+		  }
 	};
 
-    return Plotly.newPlot('survivalPlot', data, layout, {responsive: true});
+	document.getElementById('resultSurvivalPlot').style.display = "block";
+    Plotly.newPlot('resultSurvivalPlot', data, layout, {responsive: true});
 }

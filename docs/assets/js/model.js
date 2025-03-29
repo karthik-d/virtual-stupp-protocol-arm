@@ -15,13 +15,28 @@ function predictLogScale(kps90, mgmt, sex)	{
 }
 
 
+function populateSampledCsv()	{
+	document.getElementById('resultCsvButton').style.display = "block";
+}
+
+
 function populateMedianOS(mOS)	{
+	document.getElementById('resultMosBox').style.display = "block";
 	document.getElementById('mosPrediction').innerHTML = mOS.toFixed(2);
 }
 
 
 function setStatusMessage(msg)	{
 	document.getElementById('resultStatus').innerHTML = msg;
+}
+
+
+function clearResultBox()	{
+	document.getElementById('resultMosBox').style.display = "none";
+	document.getElementById('resultCsvButton').style.display = "none";
+	document.getElementById('resultSurvivalPlot').style.display = "none";
+	setStatusMessage("Waiting for input")
+	console.log("results cleared")
 }
 
 
@@ -34,7 +49,7 @@ function readData(event)	{
 	// add validation.
 
 	// read from the form.
-	total_count = 287
+	n_samples = 287
 	kps90 = 39.4
 	mgmt = 43.4
 	sex = 64.5
@@ -44,14 +59,14 @@ function readData(event)	{
 
 	// compute scale.
 	log_scale = predictLogScale(kps90, mgmt, sex);
-	const param_scale = Math.exp(log_scale)
+	const param_scale = Math.exp(log_scale);
 
 	// compute mOS.
-	const mOS = predictMOS(param_scale, param_shape)
+	const mOS = predictMOS(param_scale, param_shape);
 
-	// make the plot; fill in data.
+	// make the plot; fill in data; show relevant boxes..
 	populateMedianOS(mOS);
-	populateSurvivalPlot(lambda=param_scale, k=param_shape);
+	populateSurvivalPlot(lambda=param_scale, k=param_shape, n_samples=n_samples);
 
 	// generate samples.
 	setStatusMessage("Sampling the distribution and generating CSV...");
